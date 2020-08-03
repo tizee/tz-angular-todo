@@ -1,0 +1,11 @@
+<div>Top Tasks</div>
+<div>
+  <a *ngFor="let task of tasks"
+  routerLink="/detail/{{task.id}}"
+  >
+    <div>
+      <h4>{{task.txt}}</h4>
+    </div>
+  </a>
+</div>
+<app-task-search></app-task-search>

@@ -1,0 +1,30 @@
+<div class="task-wrapper" >
+  <div>
+    <label>
+      Task:
+      <input #taskName/>
+      <button (click)="add(taskName.value);taskName.value=''">Add</button>
+    </label>
+  </div>
+<!-- *ngIf only show when not undefined/null -->
+  <ul class="task-list">
+    <!-- use *ngFor for for-loop -->
+    <li class="task" *ngFor="let task of taskList" (click)="onSelect(task)"
+    [class.selected]="task === selectedTask"
+    >
+    <a routerLink="/detail/{{task.id}}">
+      <div><span class="task-state" [class.pending]="task.state === 0"
+        [class.progress]="task.state === 1"
+        [class.done]="task.state === 2"
+        >
+  {{task.state}}
+      </span><span class="task-value">
+    {{task.txt | uppercase}}
+      </span></div>
+    </a>
+    <button (click)="delete(task)">delete</button>
+     </li>
+  </ul>
+  <!-- [task] is a property binding -->
+  <!-- <app-task-detail [task]="selectedTask"></app-task-detail> -->
+</div>

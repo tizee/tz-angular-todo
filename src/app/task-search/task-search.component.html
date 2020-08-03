@@ -1,0 +1,14 @@
+<div>
+  <h4>
+    <label for="search-box">Task Search</label>
+  </h4>
+  <input type="text" #searchBox (input)="search(searchBox.value)"/>
+  <ul class="search-result">
+    <!-- The $ is a convention that indicates tasks$ is an Observable, not an array. -->
+    <li *ngFor="let task of tasks$ | async">
+      <a routerLink="/detail/{{task.id}}">
+      {{task.txt}}
+    </a>
+    </li>
+  </ul>
+</div>

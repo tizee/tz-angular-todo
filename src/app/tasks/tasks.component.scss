@@ -1,0 +1,43 @@
+.task-wrapper{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  .task-input {
+    padding: 10px;
+  }
+  .task-list{
+    list-style: none;
+    font-size: 150%;
+    font-family: 'Courier New', Courier, monospace;
+    .task{
+    transition: all ease-in 200ms;
+      &.selected{
+        border-color: lightcoral;
+      }
+      margin: 10px;
+      padding: 5px;
+      border: 2px solid black;
+      border-radius: 8px;
+    }
+    .task-state{
+      display: inline-flex;
+      padding: 5px;
+      text-align: center;
+      &.done{
+        background-color: lightgreen;
+      }
+      &.progress{
+        background-color: lightskyblue;
+      }
+      &.pending{
+        background-color: lightsalmon;
+      }
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .task-value{
+      padding-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div *ngIf="task">
+  <div class="task-input" >
+    <label for="task">
+      task:
+      <!-- use directive ngModel for two-way bindings -->
+      <input [(ngModel)]="task.txt" type="text" placeholder="input a task"/>
+    </label>
+    <button (click)="save()">save</button>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <div class="task-detail" >
+    <div class="row">
+      Detail:
+    <span class="value">
+      {{task.txt}}
+    </span>
+    </div>
+    <div class="row">
+      State:
+    <span class="value">
+      {{task.state}}
+    </span>
+    </div>
+  </div>
+</div>
